@@ -47,6 +47,31 @@ const projects = [
     thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Screenshot%202025-12-28%20170611.png?raw=true",
     description: "Faculty Introduction video for an educational institute."
   }
+  ,
+  {
+    id: 7,
+    title: "Stall poster",
+    category: "Designs",
+    videoUrl: "",
+    thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Copy%20of%20DIP%20&%20SIP%20(5000%20x%202500%20px).png?raw=true",
+    description: "Poster for a food Stall."
+  },
+  {
+    id: 8,
+    title: "Logo Design",
+    category: "Designs",
+    videoUrl: "",
+    thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Design%20-%207.png?raw=true",
+    description: "Logo for Cloud Kitchen."
+  },
+  {
+    id: 9,
+    title: "Food Menu",
+    category: "Designs",
+    videoUrl: "",
+    thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/KUTUMBAM%20MENU.png?raw=true",
+    description: "Menu for Food Stall."
+  }
 ];
 
 export default projects;
