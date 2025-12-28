@@ -107,22 +107,22 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
     await storage.createProject({
       title: "Stall poster",
       category: "Designs",
-      videoUrl: "",
+      videoUrl: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Copy%20of%20DIP%20&%20SIP%20(5000%20x%202500%20px).png?raw=true",
       thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Copy%20of%20DIP%20&%20SIP%20(5000%20x%202500%20px).png?raw=true",
       description: "Poster for a food Stall."
     });
     await storage.createProject({
       title: "Logo Design",
       category: "Designs",
-      videoUrl: "",
+      videoUrl: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Design%20-%207.png?raw=true",
       thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Design%20-%207.png?raw=true",
       description: "Logo for Cloud Kitchen."
     });
     await storage.createProject({
       title: "Food Menu",
       category: "Designs",
-      videoUrl: "",
-      thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/KUTUMBAM%20MENU.png?raw=trues",
+      videoUrl: "https://github.com/Hameedalahr/DIP-SIP/blob/main/KUTUMBAM%20MENU.png?raw=true",
+      thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/KUTUMBAM%20MENU.png?raw=true",
       description: "Menu for Food Stall."
     });
     
