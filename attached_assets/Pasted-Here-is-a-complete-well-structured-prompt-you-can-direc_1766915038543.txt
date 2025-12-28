@@ -1,0 +1,198 @@
+Here is a **complete, well-structured prompt** you can directly give to any LLM / website builder / designer to create a **professional video editing portfolio** for your agency **Moonlit Works**.
+
+You can copy–paste this as-is.
+
+---
+
+## COMPLETE PROMPT: Video Editing Portfolio Website
+
+**Role:**
+Act as a senior UI/UX designer and creative director specializing in portfolio websites for video editing agencies.
+
+**Objective:**
+Create a modern, cinematic, and professional portfolio website for a video editing agency named **Moonlit Works**. The website should build trust, showcase creativity, and convert visitors into clients.
+
+---
+
+## Brand Details
+
+* **Agency Name:** Moonlit Works
+* **Industry:** Video Editing & Post-Production
+* **Brand Personality:**
+
+  * Cinematic
+  * Creative
+  * Professional
+  * Minimal yet impactful
+* **Target Audience:**
+
+  * Content creators
+  * Brands & startups
+  * Influencers
+  * Event organizers
+  * Businesses needing promotional videos
+
+---
+
+## Design Style & Theme
+
+* Dark mode dominant (inspired by cinema / night aesthetics)
+* Accent colors: soft moonlight tones (silver, blue, violet)
+* Clean typography (modern sans-serif fonts)
+* Smooth animations and subtle transitions
+* High-quality visuals and video previews
+* Minimal clutter, strong visual hierarchy
+
+---
+
+## Required Pages & Sections
+
+### 1. Home Page
+
+* Full-screen hero section with cinematic background video
+* Tagline (example style, not mandatory):
+  “Crafting Stories After Dark”
+* Short intro about Moonlit Works
+* Call-to-action buttons:
+
+  * View Portfolio
+  * Get a Quote
+* Trusted by / clients section (if available)
+
+---
+
+### 2. About Us
+
+* Story of Moonlit Works
+* Mission & vision
+* What makes Moonlit Works different
+* Team section (optional)
+* Emphasis on creativity, collaboration, and storytelling
+
+---
+
+### 3. Services
+
+Include detailed service cards for:
+
+* Video Editing
+* Reels & Short-form Content
+* Cinematic Edits
+* Corporate & Brand Videos
+* Event Highlights
+* YouTube Video Editing
+* Motion Graphics (if applicable)
+* Color Grading & Sound Design
+
+Each service should include:
+
+* Short description
+* Use cases
+* Ideal clients
+
+---
+
+### 4. Portfolio / Work Showcase
+
+* Categorized video gallery:
+
+  * Reels
+  * YouTube
+  * Events
+  * Promotional / Brand Videos
+* Embedded videos (YouTube / Vimeo)
+* Hover effects showing project details
+* Case-study style layout for premium projects
+
+---
+
+### 5. Process (How We Work)
+
+Step-by-step workflow:
+
+1. Understanding the client’s vision
+2. Planning & concept
+3. Editing & storytelling
+4. Revisions & feedback
+5. Final delivery
+
+---
+
+### 6. Testimonials
+
+* Client reviews
+* Star ratings (optional)
+* Short feedback quotes
+* Client name & role
+
+---
+
+### 7. Contact / Get a Quote
+
+* Contact form:
+
+  * Name
+  * Email
+  * Project type
+  * Message
+* Call-to-action:
+  “Let’s create something cinematic”
+* Social media links
+* Email contact
+* WhatsApp / business contact (optional)
+
+---
+
+### 8. Footer
+
+* Agency name & logo
+* Quick links
+* Copyright
+* Social media icons
+
+---
+
+## Functional Requirements
+
+* Fully responsive (mobile, tablet, desktop)
+* Fast loading
+* SEO-friendly
+* Smooth scrolling
+* Video lazy loading
+* Contact form with backend/email integration
+
+---
+
+## Tech Stack Preference (Optional)
+
+* Frontend: Next.js / React
+* Styling: Tailwind CSS
+* Hosting: Vercel / Netlify
+* CMS (optional): Sanity / Contentful
+* Video hosting: YouTube / Vimeo
+
+---
+
+## Output Expectation
+
+* Provide:
+
+  * Website structure
+  * Section-wise content suggestions
+  * UI layout ideas
+  * Color palette
+  * Typography suggestions
+* Focus on **professional agency-level quality**
+* Avoid generic templates; make it feel custom and premium
+
+---
+
+If you want next, I can:
+
+* Write **actual website copy** for Moonlit Works
+* Create **portfolio project descriptions**
+* Design a **one-page version**
+* Convert this into a **Notion or Figma-ready brief**
+* Tailor it for **freelancer → agency scaling**
+
+Just tell me how you want to proceed.
