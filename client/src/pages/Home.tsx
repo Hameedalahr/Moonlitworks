@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, Play, Award, Zap, Globe } from "lucide-react";
+import { ArrowRight, Play, Award, Zap, Globe, Film } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
