@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Play, Loader2 } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
-const categories = ["All", "Brand", "Reels", "Events", "YouTube"];
+const categories = ["All", "Designs", "Reels", "Events", "YouTube"];
 
 export default function Portfolio() {
   const { data: projects, isLoading, error } = useProjects();

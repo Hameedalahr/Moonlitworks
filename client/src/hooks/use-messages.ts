@@ -4,7 +4,8 @@ import { api, type InsertMessage } from "@shared/routes";
 export function useCreateMessage() {
   return useMutation({
     mutationFn: async (data: InsertMessage) => {
-      const res = await fetch(api.messages.create.path, {
+      const base = import.meta.env.VITE_API_BASE || "";
+      const res = await fetch(`${base}${api.messages.create.path}`, {
         method: api.messages.create.method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

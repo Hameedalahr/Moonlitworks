@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, Play, Award, Zap, Globe, Film } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
@@ -63,7 +64,7 @@ export default function Home() {
             </motion.h1>
             
             <motion.p variants={itemVariants} className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
-              Moonlit Works is a digital cinema agency specializing in high-end video production, creative direction, and brand storytelling.
+              Moonlit Works is a agency specializing in high-end video production, creative direction, and brand storytelling.
             </motion.p>
             
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4">
@@ -72,11 +73,15 @@ export default function Home() {
                   View Our Work <ArrowRight className="ml-2 w-5 h-5" />
                 </button>
               </Link>
-              <Link href="/contact">
-                <button className="px-8 py-4 rounded-full bg-white/5 text-white font-semibold text-lg hover:bg-white/10 border border-white/10 backdrop-blur-sm transition-all duration-300">
-                  Get in Touch
-                </button>
-              </Link>
+              <a
+                href="https://wa.me/919490627247"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 rounded-full bg-green-600 text-white font-semibold text-lg hover:bg-green-700 transition-colors duration-300"
+              >
+                <FaWhatsapp className="w-5 h-5 mr-3" />
+                Get in Touch
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -126,13 +131,13 @@ export default function Home() {
                   </div>
                   {/* Unsplash tech/abstract placeholder */}
                   <img 
-                    src={i === 1 ? "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&auto=format&fit=crop" : "https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=800&auto=format&fit=crop"} 
+                    src={i === 1 ? "https://github.com/Hameedalahr/DIP-SIP/blob/main/UWqSdBv-gDg-HD.jpg?raw=true" : "https://github.com/Hameedalahr/DIP-SIP/blob/main/maxresdefault.jpg?raw=true"} 
                     alt="Project Thumbnail"
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
-                <h3 className="text-2xl font-bold font-display mb-2 group-hover:text-primary transition-colors">Project Title {i}</h3>
-                <p className="text-muted-foreground">Brand Campaign • 2024</p>
+                <h3 className="text-2xl font-bold font-display mb-2 group-hover:text-primary transition-colors">Project {i}</h3>
+                <p className="text-muted-foreground">Works • 2025</p>
               </motion.div>
             ))}
           </div>

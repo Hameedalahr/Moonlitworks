@@ -4,12 +4,7 @@ import { motion } from "framer-motion";
 import { Film, Zap, Globe, Music, Camera, PenTool, Check } from "lucide-react";
 
 const services = [
-  {
-    icon: <Film className="w-10 h-10" />,
-    title: "Commercial Production",
-    description: "High-end commercials for TV and digital platforms that communicate your brand's unique value proposition.",
-    features: ["Concept Development", "Scriptwriting", "4K/8K Production", "Color Grading"]
-  },
+
   {
     icon: <Zap className="w-10 h-10" />,
     title: "Social Media Content",
@@ -18,21 +13,15 @@ const services = [
   },
   {
     icon: <Globe className="w-10 h-10" />,
-    title: "Event Coverage",
-    description: "Cinematic documentation of corporate events, festivals, and launches that captures the energy and scale of the moment.",
-    features: ["Multi-cam Setup", "Live Streaming", "Same-day Edits", "Highlight Reels"]
+    title: "Event Videos",
+    description: "Cinematic documentation of corporate events/marraiges/ceremony footages.",
+    features: ["After Effects", "Same-day Edits", "Highlight Reels"]
   },
   {
     icon: <Music className="w-10 h-10" />,
-    title: "Music Videos",
-    description: "Creative visual storytelling for artists and labels. We bring your sonic vision to life through stunning imagery.",
-    features: ["Art Direction", "Location Scouting", "VFX & Animation", "Narrative Flow"]
-  },
-  {
-    icon: <Camera className="w-10 h-10" />,
-    title: "Product Videography",
-    description: "Showcase your products in motion. Clean, dynamic lighting and movement that highlights details and features.",
-    features: ["Studio Lighting", "Macro Videography", "360 Rotation", "Lifestyle Context"]
+    title: "Graphic Designing",
+    description: "Creative visual storytelling through Designs for Bussiness, Events, Occasions.",
+    features: ["Multiple Designs", "Sketches", "Narrative Flow"]
   },
   {
     icon: <PenTool className="w-10 h-10" />,

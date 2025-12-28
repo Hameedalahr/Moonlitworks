@@ -27,16 +27,19 @@ export function Navigation() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-4 bg-background/80 backdrop-blur-lg border-b border-white/5" : "py-6 bg-transparent"
+        scrolled
+          ? "py-4 bg-background/80 backdrop-blur-lg border-b border-white/5"
+          : "py-6 bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2 group cursor-pointer">
-          <div className="relative w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center group-hover:shadow-[0_0_15px_rgba(var(--primary),0.5)] transition-shadow duration-300">
-            <Moon className="w-5 h-5 text-background fill-background" />
-          </div>
+        <Link
+          href="/"
+          className="flex items-center space-x-2 group cursor-pointer"
+        >
+          <img src="/logo.png" alt="Moonlit Works Logo" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
           <span className="font-display font-bold text-xl tracking-tight group-hover:text-primary transition-colors">
-            MOONLIT
+            MOONLIT WORKS
           </span>
         </Link>
 
@@ -47,7 +50,9 @@ export function Navigation() {
               key={link.href}
               href={link.href}
               className={`text-sm font-medium tracking-wide transition-colors duration-200 hover:text-primary ${
-                location === link.href ? "text-primary" : "text-muted-foreground"
+                location === link.href
+                  ? "text-primary"
+                  : "text-muted-foreground"
               }`}
             >
               {link.label}
@@ -84,7 +89,9 @@ export function Navigation() {
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className={`text-lg font-medium transition-colors hover:text-primary ${
-                      location === link.href ? "text-primary" : "text-muted-foreground"
+                      location === link.href
+                        ? "text-primary"
+                        : "text-muted-foreground"
                     }`}
                   >
                     {link.label}

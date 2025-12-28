@@ -3,10 +3,10 @@ import { Footer } from "@/components/Footer";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertMessageSchema, type InsertMessage } from "@shared/schema";
-import { useCreateMessage } from "@/hooks/use-messages";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Loader2, Send } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,7 +14,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 export default function Contact() {
   const { toast } = useToast();
-  const mutation = useCreateMessage();
 
   const form = useForm<InsertMessage>({
     resolver: zodResolver(insertMessageSchema),
@@ -27,22 +26,13 @@ export default function Contact() {
   });
 
   const onSubmit = (data: InsertMessage) => {
-    mutation.mutate(data, {
-      onSuccess: () => {
-        toast({
-          title: "Message Sent!",
-          description: "We'll get back to you within 24 hours.",
-        });
-        form.reset();
-      },
-      onError: (error) => {
-        toast({
-          title: "Error",
-          description: error.message,
-          variant: "destructive"
-        });
-      }
-    });
+    const subject = encodeURIComponent(`Website Inquiry: ${data.projectType || "General"}`);
+    const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nProject Type: ${data.projectType}\n\n${data.message}`);
+    const mailto = `mailto:moonlitworks2024@gmail.com?subject=${subject}&body=${body}`;
+    // Open default mail client with prefilled message
+    window.location.href = mailto;
+    toast({ title: "Opening mail client", description: "Please complete and send the email in your mail app." });
+    form.reset();
   };
 
   return (
@@ -71,8 +61,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-white mb-1">Email Us</h3>
-                    <p className="text-muted-foreground">hello@moonlitworks.com</p>
-                    <p className="text-muted-foreground">bookings@moonlitworks.com</p>
+                    <p className="text-muted-foreground">moonlitworks2024@gmail.com</p>
+                    
                   </div>
                 </div>
 
@@ -81,22 +71,21 @@ export default function Contact() {
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-white mb-1">Call Us</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                    <p className="text-sm text-muted-foreground/60 mt-1">Mon-Fri, 9am - 6pm PST</p>
+                        <h3 className="font-bold text-white mb-1">Call Us</h3>
+                        <a
+                          href="https://wa.me/919490627247"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-muted-foreground"
+                        >
+                          <FaWhatsapp className="w-4 h-4 text-green-500" />
+                          +91 9490627247
+                        </a>
+                        <p className="text-sm text-muted-foreground/60 mt-1">Mon-Sun, 9am - 9pm IST</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-card border border-white/10 flex items-center justify-center text-primary flex-shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-white mb-1">Visit Studio</h3>
-                    <p className="text-muted-foreground">123 Creative Ave, Studio 4B</p>
-                    <p className="text-muted-foreground">Los Angeles, CA 90012</p>
-                  </div>
-                </div>
+                
               </div>
             </motion.div>
 
@@ -183,19 +172,12 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    disabled={mutation.isPending}
+                    disabled={false}
                     className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-bold text-lg hover:bg-primary/90 transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_20px_rgba(var(--primary),0.25)]"
                   >
-                    {mutation.isPending ? (
-                      <>
-                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        Send Message <Send className="ml-2 h-5 w-5" />
-                      </>
-                    )}
+                    <>
+                      Send Message <Send className="ml-2 h-5 w-5" />
+                    </>
                   </button>
                 </form>
               </Form>

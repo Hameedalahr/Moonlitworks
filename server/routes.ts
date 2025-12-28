@@ -1,15 +1,47 @@
 import type { Express } from "express";
 import type { Server } from "http";
 import { storage } from "./storage";
+import nodemailer from "nodemailer";
 import { api } from "@shared/routes";
 import { z } from "zod";
 
 export async function registerRoutes(httpServer: Server, app: Express): Promise<Server> {
+  // Configure mailer if SMTP env vars are provided
+  let mailer: nodemailer.Transporter | null = null;
+  if (process.env.SMTP_HOST && process.env.SMTP_USER) {
+    mailer = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: parseInt(process.env.SMTP_PORT || "587", 10),
+      secure: process.env.SMTP_SECURE === "true",
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+  }
   // Contact Form
   app.post(api.messages.create.path, async (req, res) => {
     try {
       const input = api.messages.create.input.parse(req.body);
       const message = await storage.createMessage(input);
+
+      // Attempt to send an email notification to the site owner
+      try {
+        if (mailer) {
+          await mailer.sendMail({
+            from: process.env.EMAIL_FROM || process.env.SMTP_USER,
+            to: "moonlitworks2024@gmail.com",
+            subject: `New contact message from ${input.name}`,
+            text: `Name: ${input.name}\nEmail: ${input.email}\nProject Type: ${input.projectType}\n\nMessage:\n${input.message}`,
+            html: `<p><strong>Name:</strong> ${input.name}</p><p><strong>Email:</strong> ${input.email}</p><p><strong>Project Type:</strong> ${input.projectType}</p><hr/><p>${input.message}</p>`,
+          });
+        } else {
+          console.log("SMTP not configured — contact message:", input);
+        }
+      } catch (mailErr) {
+        console.error("Failed to send contact email:", mailErr);
+      }
+
       res.status(201).json(message);
     } catch (err) {
       if (err instanceof z.ZodError) {
@@ -30,33 +62,71 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
   const existingProjects = await storage.getProjects();
   if (existingProjects.length === 0) {
     await storage.createProject({
-      title: "Neon City",
-      category: "Reels",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Rick Roll placeholder, replace with valid if available
-      thumbnail: "https://images.unsplash.com/photo-1535016120720-40c6874c3b1c?auto=format&fit=crop&w=800&q=80",
-      description: "Cyberpunk aesthetic reel for a tech startup."
-    });
-    await storage.createProject({
-      title: "Ocean Breeze",
-      category: "Brand",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      thumbnail: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-      description: "Lifestyle promo for a swimwear brand."
-    });
-    await storage.createProject({
-      title: "Mountain Trek",
+      title: "Village Vihari",
       category: "YouTube",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      thumbnail: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
-      description: "Vlog editing for a travel influencer."
+      videoUrl: "https://www.youtube.com/embed/7B-PGy50jRQ",
+      thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/maxresdefault.jpg?raw=true",
+      description: "Vilage vihari is a youtube channel that showcase historical content."
     });
     await storage.createProject({
-      title: "Urban Rhythms",
-      category: "Events",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      thumbnail: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
-      description: "High-energy event recap for a music festival."
+      title: "Genie Finance",
+      category: "Reels",
+      videoUrl: "https://www.youtube.com/embed/DPKkdtD6dmQ", // Rick Roll placeholder, replace with valid if available
+      thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Genie%20Finance%20(1).png?raw=true",
+      description: "Genie Finance is a Instagram page that provides financial tips and advice through engaging reels."
     });
+    
+    await storage.createProject({
+      title: "Rishab Pant Comeback",
+      category: "YouTube",
+      videoUrl: "https://www.youtube.com/embed/UWqSdBv-gDg",
+      thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/UWqSdBv-gDg-HD.jpg?raw=true",
+      description: "Full length basic Youtube video focusing on Rishab Pant's comeback."
+    });
+    await storage.createProject({
+      title: "Tech Related Videos",
+      category: "Reels",
+      videoUrl: "https://www.youtube.com/embed/cjanl9LdRSA",
+      thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Screenshot%202025-12-28%20164634.png?raw=true",
+      description: "Videos that cover the latest trends and innovations in technology."
+    });
+    await storage.createProject({
+      title: "RGM EXPO 2025",
+      category: "Events",
+      videoUrl: "https://www.youtube.com/embed/K8U0956TN7c",
+      thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Screenshot%202025-12-28%20170753.png?raw=true",
+      description: "A simple promo video for an expo event."
+    });
+    await storage.createProject({
+      title: "Faculty Spotlight",
+      category: "Events",
+      videoUrl: "https://www.youtube.com/embed/Y8mtsyXAckg",
+      thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Screenshot%202025-12-28%20170611.png?raw=true",
+      description: "Faculty Introduction video for an educational institute."
+    });
+    await storage.createProject({
+      title: "Stall poster",
+      category: "Designs",
+      videoUrl: "",
+      thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Copy%20of%20DIP%20&%20SIP%20(5000%20x%202500%20px).png?raw=true",
+      description: "Poster for a food Stall."
+    });
+    await storage.createProject({
+      title: "Logo Design",
+      category: "Designs",
+      videoUrl: "",
+      thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Design%20-%207.png?raw=true",
+      description: "Logo for Cloud Kitchen."
+    });
+    await storage.createProject({
+      title: "Food Menu",
+      category: "Designs",
+      videoUrl: "",
+      thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/KUTUMBAM%20MENU.png?raw=trues",
+      description: "Menu for Food Stall."
+    });
+    
+    
   }
 
   return httpServer;
