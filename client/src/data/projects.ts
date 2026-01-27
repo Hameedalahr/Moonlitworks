@@ -71,6 +71,14 @@ const projects = [
     videoUrl: "",
     thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/KUTUMBAM%20MENU.png?raw=true",
     description: "Menu for Food Stall."
+  },
+  {
+    id: 10,
+    title: "Naming Ceremony Sample 1",
+    category: "Events",
+    videoUrl: "https://youtu.be/TvguUnTL4IU",
+    thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Atharv.png?raw=true",
+    description: "Stick Animation style for Naming Ceremony"
   }
 ];
 
