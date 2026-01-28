@@ -76,7 +76,7 @@ const projects = [
     id: 10,
     title: "Naming Ceremony Sample 1",
     category: "Events",
-    videoUrl: "https://youtu.be/TvguUnTL4IU?si=-G0o2C8mK_rXxEqt",
+    videoUrl: "https://youtu.be/TvguUnTL4IU?si=IQyOJtNO0htksf5L",
     thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Atharv.png?raw=true",
     description: "Stick Animation style for Naming Ceremony"
   }
