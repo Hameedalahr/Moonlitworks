@@ -76,10 +76,19 @@ const projects = [
     id: 10,
     title: "Naming Ceremony Sample 1",
     category: "Events",
-    videoUrl: "https://youtu.be/TvguUnTL4IU?si=IQyOJtNO0htksf5L",
+    videoUrl: "https://www.youtube.com/embed/TvguUnTL4IU",
     thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Atharv.png?raw=true",
     description: "Stick Animation style for Naming Ceremony"
+  },
+  {
+    id: 11,
+    title: "Tashvi X AA23",
+    category: "Reels",
+    videoUrl: "https://www.youtube.com/embed/NurLmaWNL0s",
+    thumbnail: "https://github.com/Hameedalahr/DIP-SIP/blob/main/Screenshot%202026-01-28%20220235.png?raw=true",
+    description: "A Trendy Comic style introduction video"
   }
+  
 ];
 
 export default projects;
